@@ -13,7 +13,7 @@ namespace UserTesting
         public void GivenPasswordWhenMachWithRegexCheckShouldBeReturnTrue()
         {
             UserValidation userValidation = new UserValidation();
-            bool result = userValidation.CheckPassword("akashPatil");
+            bool result = userValidation.CheckPassword("akashPatil3");
             Assert.AreEqual(true, result);
         }
     }

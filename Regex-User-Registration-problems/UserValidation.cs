@@ -8,7 +8,7 @@ namespace Regex_User_Registration_problems
     public class UserValidation
     {
         //constants
-        public const string PASSWORD = "^.*[a-zA-Z]+.{8,}$";
+        public const string PASSWORD = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]+){8,}$";
         /// <summary>
         /// check password is valid or not
         /// </summary>
