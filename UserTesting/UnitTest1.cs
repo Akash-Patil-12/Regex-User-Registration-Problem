@@ -10,10 +10,10 @@ namespace UserTesting
         /// <summery>
         /// Test 1
         /// <summery>
-        public void GivenMobileNumberCheckShouldBeReturnTrue()
+        public void GivenPasswordWhenMachWithRegexCheckShouldBeReturnTrue()
         {
             UserValidation userValidation = new UserValidation();
-            bool result = userValidation.CheckLastName("91 9960708015");
+            bool result = userValidation.CheckPassword("akashpatil");
             Assert.AreEqual(true, result);
         }
     }

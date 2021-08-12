@@ -8,15 +8,15 @@ namespace Regex_User_Registration_problems
     public class UserValidation
     {
         //constants
-        public const string PHONE_NUMBER = "^[91]{2}\\s[0-9]{10}$";
+        public const string PASSWORD = "^[a-z]{8,}$";
         /// <summary>
-        /// Check mobile number is valid or not 
+        /// check password is valid or no
         /// </summary>
         /// <returns></returns>
-        public bool CheckLastName(string phoneNumber)
+        public bool CheckPassword(string password)
         {
-            Regex regex = new Regex(PHONE_NUMBER);
-            return regex.IsMatch(phoneNumber);
+            Regex regex = new Regex(PASSWORD);
+            return regex.IsMatch(password);
         }
     }
 }
