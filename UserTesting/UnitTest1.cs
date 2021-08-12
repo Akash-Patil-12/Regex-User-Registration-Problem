@@ -10,10 +10,10 @@ namespace UserTesting
         /// <summery>
         /// Test 1
         /// <summery>
-        public void GivenLastNameWhenCheckShouldBeReturnTrue()
+        public void GivenMobileNumberCheckShouldBeReturnTrue()
         {
             UserValidation userValidation = new UserValidation();
-            bool result = userValidation.CheckLastName("Pkash");
+            bool result = userValidation.CheckLastName("91 9960708015");
             Assert.AreEqual(true, result);
         }
     }

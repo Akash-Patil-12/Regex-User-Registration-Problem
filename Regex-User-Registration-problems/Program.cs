@@ -6,14 +6,14 @@ namespace Regex_User_Registration_problems
     {       
         static void Main(string[] args)
         {
-            string lastName;
+            string phoneNumber;
             UserValidation userValidation = new UserValidation();
-            Console.WriteLine("Enter a last name");
-            lastName = Console.ReadLine();
-            if (userValidation.CheckLastName(lastName))
-                Console.WriteLine(lastName+ " : is valid");
+            Console.WriteLine("Enter a phone number");
+            phoneNumber = Console.ReadLine();
+            if (userValidation.CheckLastName(phoneNumber))
+                Console.WriteLine(phoneNumber+ " : is valid");
             else
-                Console.WriteLine(lastName + " : is not valid");
+                Console.WriteLine(phoneNumber + " : is not valid");
         }
     }
 }
