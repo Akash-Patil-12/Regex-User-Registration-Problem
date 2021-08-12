@@ -10,10 +10,10 @@ namespace UserTesting
         /// <summery>
         /// Test 1
         /// <summery>
-        public void GivenFirstNameWhenCheckShouldBeReturnTrue()
+        public void GivenLastNameWhenCheckShouldBeReturnTrue()
         {
             UserValidation userValidation = new UserValidation();
-            bool result = userValidation.CheckFirstName("Akash");
+            bool result = userValidation.CheckLastName("Pkash");
             Assert.AreEqual(true, result);
         }
     }
