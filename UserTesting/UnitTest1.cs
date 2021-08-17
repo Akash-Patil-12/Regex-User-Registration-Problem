@@ -8,7 +8,7 @@ namespace UserTesting
     {
         [TestMethod]
         /// <summery>
-        /// Test case Password contains exactly one special character
+        /// Test case Password contains exactly one special character else its not valid
         /// <summery>
         public void GivenEmailMachWithRegexCheckShouldBeReturnTrue()
         {

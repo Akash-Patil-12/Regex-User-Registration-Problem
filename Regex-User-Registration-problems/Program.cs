@@ -11,9 +11,9 @@ namespace Regex_User_Registration_problems
             Console.WriteLine("Enter a password");
             password = Console.ReadLine();
             if (userValidation.CheckPassword(password))
-                Console.WriteLine(password+ " : is valid");
+                Console.WriteLine(password+ " : is valid.");
             else
-                Console.WriteLine(password + " : is not valid");
+                Console.WriteLine(password + " : is not valid.");
         }
     }
 }
