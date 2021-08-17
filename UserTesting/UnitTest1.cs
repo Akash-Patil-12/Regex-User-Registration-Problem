@@ -8,12 +8,12 @@ namespace UserTesting
     {
         [TestMethod]
         /// <summery>
-        /// Test 1
+        /// Test case Password contains exactly one special character
         /// <summery>
-        public void GivenPasswordWhenMachWithRegexCheckShouldBeReturnTrue()
+        public void GivenEmailMachWithRegexCheckShouldBeReturnTrue()
         {
             UserValidation userValidation = new UserValidation();
-            bool result = userValidation.CheckPassword("akashPatil3");
+            bool result = userValidation.CheckPassword("Aks3bxyz@");
             Assert.AreEqual(true, result);
         }
     }
