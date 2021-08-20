@@ -6,14 +6,8 @@ namespace Regex_User_Registration_problems
     {       
         static void Main(string[] args)
         {
-            string email;
             UserValidation userValidation = new UserValidation();
-            Console.WriteLine("Enter a password");
-            email = Console.ReadLine();
-            if (userValidation.CheckEmail(email))
-                Console.WriteLine(email+ " : is valid.");
-            else
-                Console.WriteLine(email + " : is not valid.");
+            Console.WriteLine("Return value is :"+userValidation.UserEntry("Akash", "Patil", "91 9960801597", "Akash12patil", "abc@yahoo.com"));
         }
     }
 }
