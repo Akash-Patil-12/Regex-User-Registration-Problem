@@ -36,5 +36,16 @@ namespace UserTesting
             string expect = userValidation.UserEntry("Akash", "Patil", "91 99608015", "Akash12patil", "abc@yahoo.com");
             Assert.AreEqual("Sad", expect);
         }
+        [TestMethod]
+        ///<summary>
+        /// Test case check multiple entrys of email if all valid return true else return false
+        /// </summary>
+        public void GivenMultipleEntryForEmailWithRegexCheckShouldBeReturnTrue()
+        {
+            string[] emailList = { "abc@yahoo.com", "Akash@gmail.com", "Sam233@gmail.ocm" };
+            UserValidation userValidation = new UserValidation();
+            bool expect = userValidation.MultipleEntyForEmail(emailList);
+            Assert.AreEqual(true, expect);
+        }
     }
 }

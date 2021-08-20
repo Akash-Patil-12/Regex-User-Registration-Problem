@@ -64,5 +64,16 @@ namespace Regex_User_Registration_problems
             }
             return "Happy";
         }
+        public bool MultipleEntyForEmail(string[] emailList)
+        {
+            foreach (string email in emailList)
+            {
+                Regex regexEmail = new Regex(SAMPLE_EMAIL);
+                bool checkValidate = regexEmail.IsMatch(email);
+                if (checkValidate == false)
+                    return false;
+            }
+            return true;
+        }
     }
 }
