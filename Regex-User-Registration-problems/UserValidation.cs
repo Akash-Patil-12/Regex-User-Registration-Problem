@@ -18,8 +18,15 @@ namespace Regex_User_Registration_problems
         /// <returns></returns>
         public bool CheckEmail(string email)
         {
-            Regex regex = new Regex(SAMPLE_EMAIL);
-            return regex.IsMatch(email);
+            try
+            {
+                Regex regex = new Regex(SAMPLE_EMAIL);
+                return regex.IsMatch(email);
+            }
+            catch (CustomeException)
+            {
+                throw new CustomeException(CustomeException.ExceptionType.INVALID_EMAIL, "Email Invalid");
+            }
         }
         /// <summary>
         /// User Entry matches return Happy or it return Sad
@@ -32,38 +39,80 @@ namespace Regex_User_Registration_problems
         /// <returns></returns>
         public string UserEntry(string firstName,string lastName, string mobileNo,string password, string email)
         {
-            Regex regex = new Regex(FIRST_NAME);
-            checkValidate= regex.IsMatch(firstName);
-            if (checkValidate != true)
+            try
             {
-                return "Sad" ;
+                Regex regex = new Regex(FIRST_NAME);
+                checkValidate = regex.IsMatch(firstName);
+                if (checkValidate != true)
+                {
+                    throw new CustomeException(CustomeException.ExceptionType.INVALID_FIRSTNAME, "FirstName Exception");
+                }
             }
-            Regex regexLastName = new Regex(LAST_NAME);
-            checkValidate= regexLastName.IsMatch(lastName);
-            if (checkValidate != true)
+            catch (CustomeException)
             {
-                return "Sad";
+                throw new CustomeException(CustomeException.ExceptionType.INVALID_FIRSTNAME, "FirstName Exception");
             }
-            Regex regexMobileNo = new Regex(PHONE_NUMBER);
-            checkValidate = regexMobileNo.IsMatch(mobileNo);
-            if (checkValidate != true)
+            try
             {
-                return "Sad";
+                Regex regexLastName = new Regex(LAST_NAME);
+                checkValidate = regexLastName.IsMatch(lastName);
+                if (checkValidate != true)
+                {
+                    throw new CustomeException(CustomeException.ExceptionType.INVALID_LASTNAME, "LastName Exception");
+                }
             }
-            Regex regexPassword = new Regex(PASSWORD);
-            checkValidate = regexPassword.IsMatch(password);
-            if (checkValidate != true)
+            catch (CustomeException)
             {
-                return "Sad";
+                throw new CustomeException(CustomeException.ExceptionType.INVALID_LASTNAME, "LastName Exception");
             }
-            Regex regexEmail = new Regex(SAMPLE_EMAIL);
-            checkValidate = regexEmail.IsMatch(email);
-            if (checkValidate != true)
+            try 
+            { 
+                Regex regexMobileNo = new Regex(PHONE_NUMBER);
+                checkValidate = regexMobileNo.IsMatch(mobileNo);
+                if (checkValidate != true)
+                {
+                    throw new CustomeException(CustomeException.ExceptionType.INVALID_MNO, "PhoneNumber Exception");
+                }
+
+            }
+            catch (CustomeException)
             {
-                return "Sad";
+                throw new CustomeException(CustomeException.ExceptionType.INVALID_MNO, "PhoneNumber Exception");
+            }
+            try
+            {
+                Regex regexPassword = new Regex(PASSWORD);
+                checkValidate = regexPassword.IsMatch(password);
+                if (checkValidate != true)
+                {
+                    throw new CustomeException(CustomeException.ExceptionType.INVALID_PASSWORD, "Password Exception");
+                }
+            }
+            catch (CustomeException)
+            {
+                throw new CustomeException(CustomeException.ExceptionType.INVALID_PASSWORD, "Password Exception");
+            }
+            try
+            {
+                Regex regexEmail = new Regex(SAMPLE_EMAIL);
+                checkValidate = regexEmail.IsMatch(email);
+                if (checkValidate != true)
+                {
+                    throw new CustomeException(CustomeException.ExceptionType.INVALID_EMAIL, "Email Exception");
+                }
+                
+            }
+            catch (CustomeException )
+            {
+                throw new CustomeException(CustomeException.ExceptionType.INVALID_EMAIL, "Email Exception");
             }
             return "Happy";
         }
+        /// <summary>
+        /// Take list of mail and check all are valid or not 
+        /// </summary>
+        /// <param name="emailList"></param>
+        /// <returns></returns>
         public bool MultipleEntyForEmail(string[] emailList)
         {
             foreach (string email in emailList)
